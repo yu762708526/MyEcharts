@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/reset.css">
+</head>
+
+<body>
+  <!-- 头部区域 -->
+  <div class="header">
+    <h1>数据可视化-myEcharts</h1>
+    <div class="showtime"></div>
+  </div>
+  <!-- 主题区域 -->
+  <div class="main">
+    <!-- 左边区域 -->
+    <div class="main_box">
+      <div class="table_common bar">
+        <h1>柱形图-就业行业
+        </h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+      <div class="table_common line">
+        <h1>折线图-人员变化
+          <a href="javascript:;">2020</a>
+          <a href="javascript:;">2021</a>
+        </h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+      <div class="table_common pie">
+        <h1>饼形图-年龄分布</h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+    </div>
+    <!-- 中间区域 -->
+    <div class="main_box">
+      <!-- 数字模块 -->
+      <div class="num">
+        <div class="num_header">
+          <ul>
+            <li>12859</li>
+            <li>15453</li>
+          </ul>
+        </div>
+        <div class="num_bottom">
+          <ul>
+            <li>前端需求人数</li>
+            <li>市场供应人数</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 地图模块 -->
+      <div class="map">
+        <div class="map1"></div>
+        <div class="map2"></div>
+        <div class="map3"></div>
+        <div class="echarts"></div>
+      </div>
+    </div>
+    <!-- 右边区域 -->
+    <div class="main_box">
+      <div class="table_common bar2">
+        <h1>柱形图-就业行业</h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+      <div class="table_common line2">
+        <h1>折线图-播放量</h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+      <div class="table_common pie2">
+        <h1>饼形图-地区分布</h1>
+        <div class="echarts">图表</div>
+        <!-- 用于做角标的盒子 -->
+        <div class="table_common_child"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let timer = null
+    if (timer) {
+      clearTimeout(timer)
+    } else {
+      timer = setTimeout(getdate, 1000);
+    }
+    function getdate() {
+      clearTimeout(timer)
+      const dt = new Date();
+      const y = dt.getFullYear();
+      const m = dt.getMonth() + 1;
+      const d = dt.getDate();
+      const hh = dt.getHours()
+      const mm = dt.getMinutes()
+      const ss = dt.getSeconds()
+      const time = `当前时间:${y}年${m}月${d}日-${hh}时${mm}分${ss}秒`
+      document.querySelector('.showtime').innerHTML = time
+      timer = setTimeout(getdate, 1000)
+    }
+  </script>
+  <script src="./js/flexible.js"></script>
+  <script src="./js/echarts.min.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/china.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
